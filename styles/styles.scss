@@ -1,0 +1,68 @@
+@import "./global/colors";
+@import "./global/mixins";
+
+header {
+  h1 {
+    background-color: $header-color;
+    text-align: center;
+    margin: 0;
+  }
+}
+
+main {
+  ul {
+    @include columnOfElements;
+    list-style-type: none;
+    padding: 0;
+    li {
+      background-color: $item-color;
+      margin-bottom: 1vh;
+      text-align: center;
+    }
+  }
+
+  article {
+    margin-top: 65vh;
+    background-color: $article-color;
+  }
+}
+
+footer {
+  @extend header;
+  background-color: $footer-color;
+  margin-top: 1vh;
+}
+
+body {
+  @include columnOfElements;
+  height: 100%;
+}
+
+// tablet view
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  main {
+    ul {
+      width: 50%;
+    }
+
+    article {
+      margin-top: 75vh;
+    }
+  }
+}
+
+// desktop view
+@media only screen and (min-width: 769px) {
+  main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    ul {
+      width: 30%;
+    }
+    article {
+        width: 40%;
+        margin-block-start: 1em;
+    }
+  }
+}

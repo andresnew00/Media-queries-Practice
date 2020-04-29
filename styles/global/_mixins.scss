@@ -1,0 +1,6 @@
+@import 'colors';
+
+@mixin columnOfElements {
+    display: flex;
+    flex-direction: column;
+}
